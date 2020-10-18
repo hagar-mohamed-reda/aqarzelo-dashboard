@@ -25,7 +25,7 @@ class Country extends Model
      *
      * @return String
      */
-    public function getIconAttribute() {
+    public function getIconUrlAttribute() {
         return AQARZELO_PUBLIC_URL . '/' . $this->icon;
     }
     public function cities()

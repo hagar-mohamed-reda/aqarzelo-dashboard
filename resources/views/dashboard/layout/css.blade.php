@@ -4,7 +4,7 @@
 
 
 <!-- website title -->
-<title>{{ optional(App\Setting::find(5))->value }}</title>
+<title>AQARZELO</title>
 
 <!-- Tell the browser to be responsive to screen width -->
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="{{ url('/') }}/dist/css/bootstrap-material-design.min.css">
 <link rel="stylesheet" href="{{ url('/') }}/dist/css/ripples.min.css">
 -->
-
+<link rel="icon" href="{{ AQARZELO_PUBLIC_URL }}/backend/logopng.ico" type="image/x-icon">
 <link rel="stylesheet" href="{{ url('/') }}/dist/css/MaterialAdminLTE.min.css">
 
 <!-- Font Awesome -->
