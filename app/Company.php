@@ -52,7 +52,7 @@ class Company extends Authenticatable implements Profilable {
     public function getPhotoUrlAttribute() {
         if (!$this->photo)
             return AQARZELO_PUBLIC_URL . '/images/user.jpg';
-        return AQARZELO_PUBLIC_URL . "/images/company" . $this->photo;
+        return AQARZELO_PUBLIC_URL . "/images/company/" . $this->photo;
     }
 
 
@@ -62,7 +62,7 @@ class Company extends Authenticatable implements Profilable {
      * @return String
      */
     public function getCoverUrlAttribute() {
-        return AQARZELO_PUBLIC_URL . "/images/company" . $this->cover;
+        return AQARZELO_PUBLIC_URL . "/images/company/" . $this->cover;
     }
 
     public function users() {
@@ -130,7 +130,7 @@ class Company extends Authenticatable implements Profilable {
                 ->setCol(["name" => "photo", "label" => __('photo'), "type" => "image", "required"=> false])
                 ->setCol(["name" => "address", "label" => __('address'), "type" => "text", "required"=> false])
                 ->setCol(["name" => "active", "label" => __('active'), "type" => "select", "data" => $active])
-                ->setUrl(AQARZELO_PUBLIC_URL . '/image/company')
+                ->setUrl(AQARZELO_PUBLIC_URL . '/images/company')
                 ->build();
 
         return $builder;

@@ -279,7 +279,7 @@ class User  extends Authenticatable
                 ->setCol(["name" => "address", "label" => __('address'), "type" => "text", "required"=> false])
                 ->setCol(["name" => "company_id", "label" => __('company'), "type" => "select", "data" => $companies, "class" => "select2"])
                 ->setCol(["name" => "type", "label" => __('type'), "type" => "select", "data" => $types])
-                ->setUrl(AQARZELO_PUBLIC_URL . '/image/users')
+                ->setUrl(AQARZELO_PUBLIC_URL . '/images/users')
                 ->build();
 
         return $builder;

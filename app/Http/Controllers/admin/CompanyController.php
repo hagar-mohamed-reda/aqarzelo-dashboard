@@ -77,7 +77,7 @@ class CompanyController extends Controller {
             $company = Company::create($data);
 
             // upload attachment
-            Helper::uploadFile($request->file("photo"), "/companys", function($filename) use ($company){
+            Helper::uploadFile($request->file("photo"), "/company", function($filename) use ($company){
                 $company->update([
                     "photo" => $filename
                 ]);
@@ -106,6 +106,7 @@ class CompanyController extends Controller {
                 return Message::error(__('phone already exist'));
 
             $data = $request->all();
+            unset($data['photo']);
             if ($request->password)
                 $data['password'] = Hash::make($request->password);
 
@@ -115,6 +116,7 @@ class CompanyController extends Controller {
 
             // upload attachment
             Helper::uploadFile($request->file("photo"), "/company", function($filename) use ($company){
+                Helper::removeFile(AQARZELO_PUBLIC_PATH . "/images/company/" . $company->photo);
                 $company->update([
                     "photo" => $filename
                 ]);
