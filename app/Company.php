@@ -119,6 +119,12 @@ class Company extends Authenticatable implements Profilable {
             ["not_active", __('not active')]
         ];
 
+        $services = [];
+
+        foreach(Service::all() as $item) {
+            $services[] = [$item->id, $item->name];
+        }
+
         $builder->setAddRoute(url('/admin/company/store'))
                 ->setEditRoute(url('/admin/company/update') . "/" . $this->id)
                 ->setCol(["name" => "id", "label" => __('id'), "editable" => false ])
@@ -126,6 +132,7 @@ class Company extends Authenticatable implements Profilable {
                 ->setCol(["name" => "commercial_no", "label" => __('commercial_no')])
                 ->setCol(["name" => "email", "label" => __('email')])
                 ->setCol(["name" => "password", "label" => __('password'), "type" => "password"])
+                ->setCol(["name" => "service_id", "label" => __('service'), "type" => "select", "data" => $services])
                 ->setCol(["name" => "phone", "label" => __('phone'), "type" => "phone"])
                 ->setCol(["name" => "photo", "label" => __('photo'), "type" => "image", "required"=> false])
                 ->setCol(["name" => "address", "label" => __('address'), "type" => "text", "required"=> false])
