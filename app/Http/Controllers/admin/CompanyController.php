@@ -110,7 +110,7 @@ class CompanyController extends Controller {
             if ($request->password)
                 $data['password'] = Hash::make($request->password);
 
-            $data['company_id'] = Auth::company()->id;
+            $data['company_id'] = Auth::user()->id;
 
             $company->update($data);
 
