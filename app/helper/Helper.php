@@ -21,7 +21,7 @@ class Helper {
         try {
             unlink($filename);
             return true;
-        } catch (Exception $exc) {
+        } catch (\Exception $exc) {
             return false;
         }
     }
