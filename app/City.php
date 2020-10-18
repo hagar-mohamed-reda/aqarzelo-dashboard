@@ -36,7 +36,7 @@ class City extends Model
                 ->setCol(["name" => "id", "label" => __('id'), "editable" => false ])
                 ->setCol(["name" => "name_ar", "label" => __('name_ar'), "col" => "col-lg-12 col-md-12 col-sm-12"])
                 ->setCol(["name" => "name_en", "label" => __('name_en'), "col" => "col-lg-12 col-md-12 col-sm-12"])
-                ->setCol(["name" => "country_id", "label" => __('city'), "type" => "select", "data" => $items, "col" => "col-lg-12 col-md-12 col-sm-12"])
+                ->setCol(["name" => "country_id", "label" => __('country'), "type" => "select", "data" => $items, "col" => "col-lg-12 col-md-12 col-sm-12"])
                 ->setUrl(url('/image/city'))
                 ->build();
 

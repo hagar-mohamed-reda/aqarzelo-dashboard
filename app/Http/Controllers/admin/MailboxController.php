@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\helper\Message;
 use App\helper\Helper;
-use App\Mailbox;
+use App\MailBox;
 use DB;
 use DataTables;
 
@@ -28,13 +28,13 @@ class MailboxController extends Controller
      * return json data
      */
     public function getData() {
-        $query = Mailbox::query()->where('user_id', Auth::user()->id)->latest();
+        $query = MailBox::query()->where('user_id', Auth::user()->id)->latest();
 
         return DataTables::eloquent($query)
-                        ->addColumn('action', function(Mailbox $mailbox) {
+                        ->addColumn('action', function(MailBox $mailbox) {
                             return view("admin.mailbox.action", compact("mailbox"));
                         })
-                        ->editColumn('user_id', function(Mailbox $mailbox) {
+                        ->editColumn('user_id', function(MailBox $mailbox) {
                             return optional($mailbox->user)->name;
                         })
                         ->rawColumns(['action', 'user_id'])
@@ -62,8 +62,8 @@ class MailboxController extends Controller
     {
         try {
             $data = $request->all();
-            $mailbox = Mailbox::create($data);
-            notify(__('add mailbox'), __('add mailbox') . " " . $mailbox->name, 'fa fa-building-o');
+            $mailbox = MailBox::create($data);
+            notify(__('add mailbox'), __('add mailbox') . " " . $mailbox->name, 'fa fa-envelope');
 
             return Message::success(Message::$DONE);
         } catch (\Exception $ex) {
@@ -88,7 +88,7 @@ class MailboxController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mailbox $mailbox)
+    public function edit(MailBox $mailbox)
     {
         return $mailbox->getViewBuilder()->loadEditView();
     }
@@ -100,12 +100,12 @@ class MailboxController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Mailbox $mailbox)
+    public function update(Request $request, MailBox $mailbox)
     {
         try {
             $data = $request->all();
             $mailbox->update($data);
-            notify(__('edit mailbox'), __('edit mailbox') . " " . $mailbox->name, "fa fa-building-o");
+            notify(__('edit mailbox'), __('edit mailbox') . " " . $mailbox->name, "fa fa-envelope");
             return Message::success(Message::$EDIT);
         } catch (\Exception $ex) {
             return Message::error(Message::$ERROR);
@@ -118,10 +118,10 @@ class MailboxController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mailbox $mailbox)
+    public function destroy(MailBox $mailbox)
     {
         try {
-            notify(__('remove mailbox'), __('remove mailbox') . " " . $mailbox->name, "fa fa-building-o");
+            notify(__('remove mailbox'), __('remove mailbox') . " " . $mailbox->name, "fa fa-envelope");
             $mailbox->delete();
             return Message::success(Message::$DONE);
         } catch (\Exception $ex) {
