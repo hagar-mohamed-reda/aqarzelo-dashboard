@@ -13,7 +13,7 @@ use App\Role;
 use DB;
 use DataTables;
 
-class UserCompanyController extends Controller {
+class UserController extends Controller {
 
     /**
      * Display a listing of the resource.

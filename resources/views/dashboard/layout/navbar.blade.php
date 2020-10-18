@@ -126,7 +126,7 @@
                     <i class="fa fa-users"></i> <span>{{ __('users') }}</span>
                 </a>
             </li>
-            <li class="treeview font w3-text-pink" onclick="showPage('company/post')" >
+            <li class="treeview font w3-text-pink" onclick="showPage('admin/post')" >
                 <a href="#">
                     <i class="fa fa-picture-o"></i> <span>{{ __('posts') }}</span>
                 </a>

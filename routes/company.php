@@ -36,13 +36,13 @@ Route::group(["middleware" => "company"], function() {
 
 
     // post routes
-    Route::get("company/post", "admin\PostController@index");
-    Route::get("company/post/create", "admin\PostController@create");
-    Route::post("company/post/store", "admin\PostController@store");
-    Route::get("company/post/data", "admin\PostController@getData");
-    Route::get("company/post/edit/{post}", "admin\PostController@edit");
-    Route::get("company/post/remove/{post}", "admin\PostController@destroy");
-    Route::post("company/post/update/{post}", "admin\PostController@update");
+    Route::get("admin/post", "admin\PostController@index");
+    Route::get("admin/post/create", "admin\PostController@create");
+    Route::post("admin/post/store", "admin\PostController@store");
+    Route::get("admin/post/data", "admin\PostController@getData");
+    Route::get("admin/post/edit/{post}", "admin\PostController@edit");
+    Route::get("admin/post/remove/{post}", "admin\PostController@destroy");
+    Route::post("admin/post/update/{post}", "admin\PostController@update");
 
     // profile routes
     Route::get("admin/profile", "admin\ProfileController@index");
