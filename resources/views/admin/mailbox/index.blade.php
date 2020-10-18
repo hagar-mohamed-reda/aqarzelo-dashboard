@@ -4,7 +4,7 @@
 {{ __('mailbox') }}
 @endsection
 @php
-    $builder = (new App\Mailbox)->getViewBuilder();
+    $builder = (new App\MailBox)->getViewBuilder();
 @endphp
 
 @section("content")
