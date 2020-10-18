@@ -52,7 +52,7 @@ class Service extends Model
                 ->setCol(["name" => "max_post_image", "label" => __('max_post_image'), "type" => "number"])
                 ->setCol(["name" => "price", "label" => __('price'), "type" => "number"])
                 ->setCol(["name" => "icon", "label" => __('icon'), "type" => "image"])
-                ->setUrl(url('/images/service'))
+                ->setUrl(AQARZELO_PUBLIC_URL . '/images/service')
                 ->build();
 
         return $builder;

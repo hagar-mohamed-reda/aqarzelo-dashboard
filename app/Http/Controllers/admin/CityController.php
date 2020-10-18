@@ -34,6 +34,9 @@ class CityController extends Controller
                         ->addColumn('action', function(City $city) {
                             return view("admin.city.action", compact("city"));
                         })
+                        ->editColumn('country_id', function(City $city) {
+                            return optional($city->country)->name_ar;
+                        })
                         ->editColumn('icon', function(City $city) {
                             return "<span class='btn label w3-blue'  data-src='".$city->icon."' onclick='viewFile(this)' >" . $city->icon . "</span>";
                         })
