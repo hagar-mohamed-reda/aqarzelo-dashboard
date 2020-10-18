@@ -34,12 +34,12 @@ class Ads extends Model
      * @return String
      */
     public function getImageAttribute() {
-        return AQARZELO_PUBLIC_URL . '/image/ads/' . $this->photo;
+        return AQARZELO_PUBLIC_URL . '/images/ads/' . $this->photo;
 
     }
 
     public function getLogoUrlAttribute() {
-        return AQARZELO_PUBLIC_URL . '/image/ads/' . $this->logo;
+        return AQARZELO_PUBLIC_URL . '/images/ads/' . $this->logo;
     }
 
 

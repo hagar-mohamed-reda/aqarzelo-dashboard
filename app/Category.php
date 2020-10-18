@@ -26,7 +26,7 @@ class Category extends Model
      * @return String
      */
     public function getIconUrlAttribute() {
-        return AQARZELO_PUBLIC_URL . '/' . $this->icon;
+        return AQARZELO_PUBLIC_URL . '/images/category/' . $this->icon;
     }
 
     public function posts()
