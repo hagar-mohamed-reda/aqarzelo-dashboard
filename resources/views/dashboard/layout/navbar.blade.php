@@ -2,7 +2,7 @@
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar shadow"  >
     <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar  ">
+    <section class="sidebar  " style="position: relative!important;overflow: auto!important" >
         <!-- Sidebar user panel -->
         <div class="user-panel" style="background: url({{ url('/dist/img/patterns/user-panel-bg_green.jpg') }});background-size: cover;bakcground-repeat: no-repeat!important;height: 150px;padding-top: 50px;" >
             <div class="pull-left image">

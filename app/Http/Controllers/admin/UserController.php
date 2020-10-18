@@ -106,6 +106,7 @@ class UserController extends Controller {
                 return Message::error(__('phone already exist'));
 
             $data = $request->all();
+            unset($data['photo']);
             $data['user_id'] = Auth::user()->id;
             if ($request->password)
                 $data['password'] = Hash::make($request->password);
@@ -113,7 +114,8 @@ class UserController extends Controller {
             $user->update($data);
 
             // upload attachment
-            Helper::uploadFile($request->file("photo"), "/user", function($filename) use ($user){
+            Helper::uploadFile($request->file("photo"), "/users", function($filename) use ($user){
+                Helper::removeFile(AQARZELO_PUBLIC_PATH . "/images/users/" . $user->photo);
                 $user->update([
                     "photo" => $filename
                 ]);

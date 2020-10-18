@@ -69,7 +69,7 @@ class User  extends Authenticatable
     public function getPhotoUrlAttribute() {
         if (!$this->photo)
             return AQARZELO_PUBLIC_URL . '/images/user.jpg';
-        return AQARZELO_PUBLIC_URL . "/images/users" . $this->photo;
+        return AQARZELO_PUBLIC_URL . "/images/users/" . $this->photo;
     }
 
 
@@ -79,7 +79,7 @@ class User  extends Authenticatable
      * @return String
      */
     public function getCoverUrlAttribute() {
-        return AQARZELO_PUBLIC_URL . "/images/users" . $this->cover;
+        return AQARZELO_PUBLIC_URL . "/images/users/" . $this->cover;
     }
 
 
