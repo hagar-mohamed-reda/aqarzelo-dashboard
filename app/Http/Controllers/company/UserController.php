@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\UserCompany;
 use App\helper\Helper;
 use App\helper\Message;
-use App\Role;
+use App\User;
 use DB;
 use DataTables;
 
@@ -33,14 +33,14 @@ class UserController extends Controller {
      * return json data
      */
     public function getData() {
-        $query = UserCompany::query()
+        $query = User::query()
         ->where('company_id', Auth::user()->company_id)
         ->latest();
         return DataTables::eloquent($query)
-                        ->addColumn('action', function(UserCompany $user) {
+                        ->addColumn('action', function(User $user) {
                             return view("company.user.action", compact("user"));
                         })
-                        ->editColumn('photo', function(UserCompany $user) {
+                        ->editColumn('photo', function(User $user) {
                             return "<img onclick='viewImage(this)' src='" . $user->photo_url . "' height='30px' class='w3-round' >";
                         })
                         ->rawColumns(['action', 'photo'])

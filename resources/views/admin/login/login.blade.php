@@ -53,7 +53,7 @@
                             <div class="">
                                 <!-- /.col -->
                                 <div class="form-group">
-                                    <button type="submit" style="color: #02A2A7!important" class="btn btn-primary btn-block btn-flat">{{ __('login') }}</button>
+                                    <button type="submit" style="background: #02A2A7!important" class="btn btn-primary btn-block btn-flat">{{ __('login') }}</button>
 
                                 </div>
                                 <!-- /.col -->

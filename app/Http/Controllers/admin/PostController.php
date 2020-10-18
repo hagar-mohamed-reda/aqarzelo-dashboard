@@ -31,7 +31,7 @@ class PostController extends Controller
     public function getData() {
         $query = Post::query();
 
-        if (Auth::user()->user_type == 'user_company') {
+        if (Auth::user()->type == 'user_company') {
             $userIds = User::where('company_id', Auth::user()->company_id)->pluck('id')->toArray();
             $query->whereIn('user_id', $userIds);
         }
