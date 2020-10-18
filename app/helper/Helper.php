@@ -21,7 +21,7 @@ class Helper {
         try {
             unlink($filename);
             return true;
-        } catch (\Exception $exc) {
+        } catch (Exception $exc) {
             return false;
         }
     }
@@ -99,7 +99,7 @@ class Helper {
     }
 
     public static function uploadImg($file, $folder = '/', $action) {
-        $path = AQARZELO_PUBLIC_PATH . "/images";
+        $path = "/home3/sphinxa1/public_html/aqarzelo/public/images";
         $filename = "";
         if ($file) {
 
@@ -114,7 +114,7 @@ class Helper {
     }
 
     public static function uploadFile($file, $folder = '/', $action) {
-        $path = AQARZELO_PUBLIC_PATH . "/file";
+        $path = "/home3/sphinxa1/public_html/aqarzelo/public/images";
         $filename = "";
         if ($file) {
             $extension = $file->getClientOriginalExtension();
