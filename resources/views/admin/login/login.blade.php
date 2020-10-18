@@ -25,13 +25,13 @@
             <!-- Content Wrapper. Contains page content -->
             <div class="login-box w3-animate-top " style="margin-top: 30px" >
                 <div class="login-logo">
-                    <img src="{{ url('/website/image/zelo.png') }}" class="w3-center w3-round animate__animated animate__bounce animate__slow animate__infinite	infinite"  width="90px" >
+                    <img src="https://aqarzelo.com/backend/logopng.ico" class="w3-center w3-round animate__animated animate__bounce animate__slow animate__infinite	infinite"  width="90px" >
                     <br>
-                    <a href="#"  class="w3-text-gray" ><b class="  animate__animated animate__pulse animate__slow animate__infinite	infinite" > AQAR ZELO  </b></a>
+                    <a href="#"   style="color: #02A2A7!important" ><b class="  animate__animated animate__pulse animate__slow animate__infinite	infinite" > AQAR ZELO  </b></a>
                 </div>
                 <!-- /.login-logo -->
                 <div class="login-box-body w3-card">
-                    <p class="login-box-msg">{{ __('login to your dashboard control') }}</p>
+                    <p class="login-box-msg" style="color: #02A2A7!important">{{ __('login to your dashboard control') }}</p>
 
                     <br>
 
@@ -53,7 +53,7 @@
                             <div class="">
                                 <!-- /.col -->
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block btn-flat">{{ __('login') }}</button>
+                                    <button type="submit" style="color: #02A2A7!important" class="btn btn-primary btn-block btn-flat">{{ __('login') }}</button>
 
                                 </div>
                                 <!-- /.col -->
