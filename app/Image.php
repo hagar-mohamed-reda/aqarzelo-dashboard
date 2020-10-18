@@ -14,8 +14,8 @@ class Image extends Model {
     protected $fillable = [
         'photo', 'post_id', 'is_360'
     ];
-    
-    
+
+
     /**
      * The attributes that are appended to object after loaded from db.
      *
@@ -24,23 +24,23 @@ class Image extends Model {
     protected $appends = [
         'image', 'src'
     ];
-    
+
     /**
      * get image attribute
      *
      * @return String
      */
     public function getSrcAttribute() {
-        return url('/images/posts') . "/" . $this->photo;
+        return AQARZELO_PUBLIC_URL . "/images/posts" . $this->photo;
     }
-    
+
     /**
      * get image attribute
      *
      * @return String
      */
     public function getImageAttribute() {
-        return url('/images/posts') . "/" . $this->photo;
+        return AQARZELO_PUBLIC_URL . "/images/posts" . $this->photo;
     }
 
     public function post() {

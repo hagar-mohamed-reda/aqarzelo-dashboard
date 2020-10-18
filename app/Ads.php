@@ -34,12 +34,12 @@ class Ads extends Model
      * @return String
      */
     public function getImageAttribute() {
-        return url('/images/ads') . '/' . $this->photo;
+        return AQARZELO_PUBLIC_URL . '/' . $this->photo;
 
     }
 
     public function getLogoUrlAttribute() {
-        return url('/images/ads') . '/' . $this->logo;
+        return AQARZELO_PUBLIC_URL . '/' . $this->logo;
     }
 
 
@@ -63,7 +63,7 @@ class Ads extends Model
                 ->setCol(["name" => "url", "label" => __('url'), "type" => "url"])
                 ->setCol(["name" => "photo", "label" => __('photo'), "type" => "image"])
                 ->setCol(["name" => "logo", "label" => __('logo'), "type" => "image"])
-                ->setUrl(url('/image/ads'))
+                ->setUrl(AQARZELO_PUBLIC_URL . '/image/ads')
                 ->build();
 
         return $builder;

@@ -68,8 +68,8 @@ class User  extends Authenticatable
      */
     public function getPhotoUrlAttribute() {
         if (!$this->photo)
-            return url('images/user.jpg');
-        return url('/images/users') . "/" . $this->photo;
+            return AQARZELO_PUBLIC_URL . '/images/user.jpg';
+        return AQARZELO_PUBLIC_URL . "/images/users" . $this->photo;
     }
 
 
@@ -79,7 +79,7 @@ class User  extends Authenticatable
      * @return String
      */
     public function getCoverUrlAttribute() {
-        return url('/images/users') . "/" . $this->cover;
+        return AQARZELO_PUBLIC_URL . "/images/users" . $this->cover;
     }
 
 
@@ -279,7 +279,7 @@ class User  extends Authenticatable
                 ->setCol(["name" => "address", "label" => __('address'), "type" => "text", "required"=> false])
                 ->setCol(["name" => "company_id", "label" => __('company'), "type" => "select", "data" => $companies, "class" => "select2"])
                 ->setCol(["name" => "type", "label" => __('type'), "type" => "select", "data" => $types])
-                ->setUrl(url('/image/users'))
+                ->setUrl(AQARZELO_PUBLIC_URL . '/image/users')
                 ->build();
 
         return $builder;

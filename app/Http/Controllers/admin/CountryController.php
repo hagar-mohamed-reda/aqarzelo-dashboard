@@ -35,7 +35,7 @@ class CountryController extends Controller
                             return view("admin.country.action", compact("country"));
                         })
                         ->editColumn('icon', function(Country $country) {
-                            return "<span class='btn label w3-blue'  data-src='".$country->icon."' onclick='viewFile(this)' >" . $country->icon . "</span>";
+                            return "<img src='".$country->icon_url."' width='40px' onclick='viewImage(this)' >";
                         })
                         ->rawColumns(['action', 'icon'])
                         ->toJson();

@@ -10,6 +10,24 @@ class Country extends Model
         'name_ar','name_en', 'icon'
     ];
 
+    /**
+     * The attributes that are appended to object after loaded from db.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'icon_url'
+    ];
+
+
+    /**
+     * return image url
+     *
+     * @return String
+     */
+    public function getIconAttribute() {
+        return AQARZELO_PUBLIC_URL . '/' . $this->icon;
+    }
     public function cities()
     {
         return $this->hasMany('App\City');
@@ -29,7 +47,7 @@ class Country extends Model
                 ->setCol(["name" => "name_ar", "label" => __('name_ar'), "col" => "col-lg-12 col-md-12 col-sm-12"])
                 ->setCol(["name" => "name_en", "label" => __('name_en'), "col" => "col-lg-12 col-md-12 col-sm-12"])
                 ->setCol(["name" => "icon", "label" => __('icon'), "type" => "image", "col" => "col-lg-12 col-md-12 col-sm-12"])
-                ->setUrl(url('/image/country'))
+                ->setUrl(AQARZELO_PUBLIC_URL . '/image/country')
                 ->build();
 
         return $builder;

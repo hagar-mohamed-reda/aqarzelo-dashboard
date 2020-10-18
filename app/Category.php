@@ -10,11 +10,30 @@ class Category extends Model
         'name_ar','name_en', 'icon'
     ];
 
+    /**
+     * The attributes that are appended to object after loaded from db.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'icon_url'
+    ];
+
+
+    /**
+     * return image url
+     *
+     * @return String
+     */
+    public function getIconAttribute() {
+        return AQARZELO_PUBLIC_URL . '/' . $this->icon;
+    }
 
     public function posts()
     {
         return $this->hasMany('App\Post');
     }
+
 
     /**
      * build view object this will make view html
@@ -30,7 +49,7 @@ class Category extends Model
                 ->setCol(["name" => "name_ar", "label" => __('name_ar')])
                 ->setCol(["name" => "name_en", "label" => __('name_en')])
                 ->setCol(["name" => "icon", "label" => __('icon'), "type" => "image"])
-                ->setUrl(url('/image/category'))
+                ->setUrl(AQARZELO_PUBLIC_URL . '/image/category')
                 ->build();
 
         return $builder;

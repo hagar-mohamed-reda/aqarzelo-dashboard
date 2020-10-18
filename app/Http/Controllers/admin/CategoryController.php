@@ -35,7 +35,7 @@ class CategoryController extends Controller
                             return view("admin.category.action", compact("category"));
                         })
                         ->editColumn('icon', function(Category $category) {
-                            return "<span class='btn label w3-blue'  data-src='".$category->icon."' onclick='viewFile(this)' >" . $category->icon . "</span>";
+                            return "<img src='".$category->icon_url."' width='40px' onclick='viewImage(this)' >";
                         })
                         ->rawColumns(['action', 'icon'])
                         ->toJson();

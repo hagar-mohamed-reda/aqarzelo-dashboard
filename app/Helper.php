@@ -7,12 +7,13 @@ use App\Option;
 
 use Illuminate\Http\Request;
 
-final class Helper { 
-    
-    
+final class Helper {
+
+    //public static $public_path = "/home3/sphinxa1/public_html/aqarzelo-dashboard/public";
+
     /**
-     * remove file 
-     * 
+     * remove file
+     *
      * @param String $filename the path or the file
      * @return boolean
      */
@@ -25,11 +26,11 @@ final class Helper {
         }
     }
 
-    
+
     /**
      * upload the image on the server
      * upload file to image folder.
-     * 
+     *
      * @param Image $file
      * @param String $folder
      * @return string  the name of uploaded image
@@ -37,16 +38,16 @@ final class Helper {
     public static function uploadImg($file, $folder = '/') {
         $extension = $file->getClientOriginalExtension();
         $filename = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
-        $dest = public_path('/images' . $folder);
+        $dest = AQARZELO_PUBLIC_PATH . '/images' . $folder;
         $file->move($dest, $filename);
         return $filename;
     }
 
-    
+
     /**
      * upload the file on the server
      * upload file to file folder.
-     * 
+     *
      * @param File $file
      * @param String $folder
      * @return string  the name of uploaded image
@@ -54,19 +55,19 @@ final class Helper {
     public static function uploadFile($file, $folder = '/') {
         $extension = $file->getClientOriginalExtension();
         $filename = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
-        $dest = public_path('/file' . $folder);
+        $dest = AQARZELO_PUBLIC_PATH . '/file' . $folder;
         $file->move($dest, $filename);
         return $filename;
     }
 
-    
+
     /**
      * send email api
-     * 
-     * @param String $to       destination email 
+     *
+     * @param String $to       destination email
      * @param String $message  the message of the email
      * @param String $subject  the subject of the email
-     * @param String $from     the emai will send the message 
+     * @param String $from     the emai will send the message
      * @return boolean         true if sent, false if not
      */
     public static function sendMail($to, $message, $subject, $from = "admin@admin.com") {
@@ -90,13 +91,13 @@ final class Helper {
 
             $response = mail($to, $subject, $message, $headers);
         } catch (\Exception $exc) {
-            
+
         }
 
         return $response;
     }
 
-    
+
     /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
     /* ::                                                                         : */
     /* ::  This routine calculates the distance between two points (given the     : */
@@ -144,11 +145,11 @@ final class Helper {
         }
     }
 
-    
+
     /**
-     * send  mobile sms to user 
-     * 
-     * @param type $message 
+     * send  mobile sms to user
+     *
+     * @param type $message
      * @param type $phone
      * @return type
      */
@@ -177,10 +178,10 @@ final class Helper {
         return $response;
     }
 
-    
+
     /**
      * firebase api notification
-     * 
+     *
      * @param type $tokens  the tokens of the firebase
      * @param type $data    the data of notification contain title, body
      * @return Array        the response from firebase api
@@ -190,10 +191,10 @@ final class Helper {
         $registrationIDs = $tokens;
 
         $fcmMsg = array(
-            "title" => $data['title_ar'],   
+            "title" => $data['title_ar'],
             "title_en" => $data['title_en'] ,
             "body" =>   $data['body_ar'],
-            "body_en" => $data['body_en'], 
+            "body_en" => $data['body_en'],
             'click_action' => "",
             'sound' => "default",
             'color' => "#203E78"
@@ -222,14 +223,14 @@ final class Helper {
         return $result;
     }
 
-    
+
     /**
      * random token every milisecond encrypted
-     * 
+     *
      * @return String  the token
      */
     public static function randamToken() {
-        // time in mili seconds 
+        // time in mili seconds
         $timeInMiliSeconds = (int) round(microtime(true) * 1000);
 
         // random number with 8 digit
@@ -256,11 +257,11 @@ final class Helper {
         // return mac attribute
         return $b->mac;
     }
-    
-    
+
+
     /**
      * create session for notification
-     * 
+     *
      * @param type $response
      */
     public static function notify($response) {
