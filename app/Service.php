@@ -11,6 +11,25 @@ class Service extends Model
         'name', 'icon','max_user' ,'max_post' ,'max_post_image' ,'price'
     ];
 
+    /**
+     * The attributes that are appended to object after loaded from db.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'icon_url'
+    ];
+
+
+    /**
+     * return image url
+     *
+     * @return String
+     */
+    public function getIconUrlAttribute() {
+        return AQARZELO_PUBLIC_URL . '/images/category/' . $this->icon;
+    }
+
     public function companies()
     {
         return $this->hasMany('App\Company');
@@ -33,7 +52,7 @@ class Service extends Model
                 ->setCol(["name" => "max_post_image", "label" => __('max_post_image'), "type" => "number"])
                 ->setCol(["name" => "price", "label" => __('price'), "type" => "number"])
                 ->setCol(["name" => "icon", "label" => __('icon'), "type" => "image"])
-                ->setUrl(url('/image/service'))
+                ->setUrl(url('/images/service'))
                 ->build();
 
         return $builder;

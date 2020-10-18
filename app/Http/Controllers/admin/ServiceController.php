@@ -35,7 +35,7 @@ class ServiceController extends Controller
                             return view("admin.service.action", compact("service"));
                         })
                         ->editColumn('icon', function(Service $service) {
-                            return "<span class='btn label w3-blue'  data-src='".$service->icon."' onclick='viewFile(this)' >" . $service->icon . "</span>";
+                            return "<img src='".$service->icon_url."' width='40px' onclick='viewImage(this)' >";
                         })
                         ->rawColumns(['action', 'icon'])
                         ->toJson();
@@ -115,9 +115,9 @@ class ServiceController extends Controller
             $data = $request->all();
             $service->update($data);
 
-
             // upload attachment
             Helper::uploadFile($request->file("icon"), "/service", function($filename) use ($service){
+                Helper::removeFile(AQARZELO_PUBLIC_PATH . "/images/service/" . $service->icon);
                 $service->update([
                     "icon" => $filename
                 ]);
