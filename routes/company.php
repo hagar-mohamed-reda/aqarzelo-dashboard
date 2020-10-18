@@ -43,6 +43,13 @@ Route::group(["middleware" => "company"], function() {
     Route::get("company/post/edit/{post}", "admin\PostController@edit");
     Route::get("company/post/remove/{post}", "admin\PostController@destroy");
     Route::post("company/post/update/{post}", "admin\PostController@update");
+
+    // profile routes
+    Route::get("admin/profile", "admin\ProfileController@index");
+    Route::post("admin/profile/update", "admin\ProfileController@update");
+    Route::post("admin/profile/update-password", "admin\ProfileController@updatePassword");
+    Route::post("admin/profile/update-phone", "admin\ProfileController@updatePhone");
+
 });
 
 

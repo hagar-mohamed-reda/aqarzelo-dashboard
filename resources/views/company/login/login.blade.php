@@ -9,7 +9,7 @@
                 overflow: auto!important;
             }
             body {
-                background-image: url('{{ url("/website/image/back1.jpg")  }}')!important;
+                background-image: url('{{ url("/website/image/home-slide-image.jpg")  }}')!important;
                 background-size: cover!important;
                 /*background-repeat: no-repeat!important;*/
             }
