@@ -35,7 +35,7 @@
 
                     <br>
 
-                    @include('admin.login.admin')
+                    @include('company.login.admin')
 
 
 
