@@ -132,7 +132,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
 
 <script>
     // url of the public path
-    var url = '{{ url("/") }}';
+    var url = '{{ AQARZELO_PUBLIC_URL }}';
     // max uploaded file size
     var MAX_UPLOADED_FILE = 5; // 5 MB
 

@@ -31,7 +31,7 @@ class Image extends Model {
      * @return String
      */
     public function getSrcAttribute() {
-        return AQARZELO_PUBLIC_URL . "/images/posts" . $this->photo;
+        return AQARZELO_PUBLIC_URL . "/images/posts/" . $this->photo;
     }
 
     /**
@@ -40,7 +40,7 @@ class Image extends Model {
      * @return String
      */
     public function getImageAttribute() {
-        return AQARZELO_PUBLIC_URL . "/images/posts" . $this->photo;
+        return AQARZELO_PUBLIC_URL . "/images/posts/" . $this->photo;
     }
 
     public function post() {

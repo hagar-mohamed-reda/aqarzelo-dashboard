@@ -128,6 +128,7 @@ class AdsController extends Controller
 
             // upload attachment
             Helper::uploadFile($request->file("photo"), "/ads", function($filename) use ($ads){
+                Helper::removeFile(AQARZELO_PUBLIC_PATH . "/images/ads/" . $ads->photo);
                 $ads->update([
                     "photo" => $filename
                 ]);
@@ -135,6 +136,7 @@ class AdsController extends Controller
 
             // upload attachment
             Helper::uploadFile($request->file("logo"), "/ads", function($filename) use ($ads){
+                Helper::removeFile(AQARZELO_PUBLIC_PATH . "/images/ads/" . $ads->logo);
                 $ads->update([
                     "logo" => $filename
                 ]);
