@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 use App\helper\Message;
 use App\helper\Helper;
@@ -29,6 +30,11 @@ class PostController extends Controller
      */
     public function getData() {
         $query = Post::query();
+
+        if (Auth::user()->user_type == 'user_company') {
+            $userIds = User::where('company_id', Auth::user()->company_id)->pluck('id')->toArray();
+            $query->whereIn('user_id', $userIds);
+        }
 
         return DataTables::eloquent($query)
                         ->addColumn('action', function(Post $post) {

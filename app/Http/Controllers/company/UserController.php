@@ -26,14 +26,17 @@ class UserCompanyController extends Controller {
      * Display a listing of the resource.
      */
     public function profile() {
-        return view("company.user.profile");
+        return view("admin.user.profile");
     }
 
     /**
      * return json data
      */
     public function getData() {
-        return DataTables::eloquent(UserCompany::query()->latest())
+        $query = UserCompany::query()
+        ->where('company_id', Auth::user()->company_id)
+        ->latest();
+        return DataTables::eloquent($query)
                         ->addColumn('action', function(UserCompany $user) {
                             return view("company.user.action", compact("user"));
                         })
