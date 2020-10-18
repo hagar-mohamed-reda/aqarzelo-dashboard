@@ -727,7 +727,7 @@ $(document).ready(function () {
     setNicescroll();
 
     @if(isset($_GET['post_id']))
-    $.get("{{ url('/api/post/get') }}?post_id={{ $_GET['post_id'] }}", function(r){
+    $.get("{{ AQARZELO_PUBLIC_URL }}/api/post/get?post_id={{ $_GET['post_id'] }}", function(r){
         app.post = r.data;
         app.post.post_id = r.data.id;
         app.post.is_edit_from_website = true;
