@@ -37,9 +37,9 @@ class CompanyController extends Controller {
                         ->addColumn('action', function(Company $company) {
                             return view("admin.company.action", compact("company"));
                         })
-//                        ->addColumn('role_id', function(Company $company) {
-//                            return optional($company->role)->name;
-//                        })
+                        ->addColumn('service_id', function(Company $company) {
+                            return optional($company->service)->name;
+                       })
                         ->editColumn('photo', function(Company $company) {
                             return "<img onclick='viewImage(this)' src='" . $company->photo_url . "' height='30px' class='w3-round' >";
                         })

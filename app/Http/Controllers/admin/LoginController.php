@@ -49,11 +49,11 @@ class LoginController extends Controller {
             //->where("password", $request->password)
             ->first();
 
-            if (!Hash::check($request->password, $user->password)) {
-                return redirect($redirect . "?status=0&msg=$error");
-            }
-
             if ($user) {
+                if (!Hash::check($request->password, $user->password)) {
+                    return redirect($redirect . "?status=0&msg=$error");
+                }
+
                 if ($user->active == 'not_active')
                     return redirect($redirect . "?status=0&msg=" . __('your account is not confirmed'));
                 Auth::login($user);

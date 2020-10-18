@@ -1,7 +1,7 @@
 <div class="auth-container {{ $type }}-container"  >
     <div>
     </div>
-    <form action="{{ url('/') }}/admin/login" class="auth-card {{ $type }}-login-card" method="post">
+    <form action="{{ url('/') }}/company/login" class="auth-card {{ $type }}-login-card" method="post">
         {{ csrf_field() }}
         <input type="hidden" name="type" value="{{ $type }}" >
         <div class="form-group has-feedback">

@@ -56,6 +56,14 @@ Route::group(["middleware" => "admin"], function() {
     Route::get("admin/city/remove/{city}", "admin\CityController@destroy");
     Route::post("admin/city/update/{city}", "admin\CityController@update");
 
+    // country routes
+    Route::get("admin/country", "admin\CountryController@index");
+    Route::post("admin/country/store", "admin\CountryController@store");
+    Route::get("admin/country/data", "admin\CountryController@getData");
+    Route::get("admin/country/edit/{country}", "admin\CountryController@edit");
+    Route::get("admin/country/remove/{country}", "admin\CountryController@destroy");
+    Route::post("admin/country/update/{country}", "admin\CountryController@update");
+
     // area routes
     Route::get("admin/area", "admin\AreaController@index");
     Route::post("admin/area/store", "admin\AreaController@store");
