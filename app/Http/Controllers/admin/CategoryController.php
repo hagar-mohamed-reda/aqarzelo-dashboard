@@ -118,6 +118,7 @@ class CategoryController extends Controller
 
             // upload attachment
             Helper::uploadFile($request->file("icon"), "/category", function($filename) use ($category){
+                Helper::removeFile(AQARZELO_PUBLIC_PATH . "/images/category/" . $category->icon);
                 $category->update([
                     "icon" => $filename
                 ]);

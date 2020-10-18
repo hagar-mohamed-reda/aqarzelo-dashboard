@@ -21,7 +21,7 @@ class Helper {
         try {
             unlink($filename);
             return true;
-        } catch (\Exception $exc) {
+        } catch (Exception $exc) {
             return false;
         }
     }
@@ -101,8 +101,8 @@ class Helper {
     public static function uploadImg($file, $folder = '/', $action) {
         $path = "/home3/sphinxa1/public_html/aqarzelo/public/images";
         $filename = "";
-        if ($file) { 
-            
+        if ($file) {
+
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $dest =  $path . $folder;

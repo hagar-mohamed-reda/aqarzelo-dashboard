@@ -63,7 +63,7 @@ class Ads extends Model
                 ->setCol(["name" => "url", "label" => __('url'), "type" => "url"])
                 ->setCol(["name" => "photo", "label" => __('photo'), "type" => "image"])
                 ->setCol(["name" => "logo", "label" => __('logo'), "type" => "image"])
-                ->setUrl(AQARZELO_PUBLIC_URL . '/image/ads')
+                ->setUrl(AQARZELO_PUBLIC_URL . '/images/ads')
                 ->build();
 
         return $builder;
