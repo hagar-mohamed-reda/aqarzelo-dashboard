@@ -78,7 +78,7 @@
                     <div class="w3-large" >{{ Auth::user()->name }}</div>
                     <br>
                     <br>
-                    <a href="{{ url('/') }}/dashboard/logout"  class="btn w3-red w3- shadow btn-sm ">تسجيل الخروج</a>
+                    <a href="{{ url('/') }}/{{ Auth::user()->type == 'admin'? 'admin' : 'company' }}/logout"  class="btn w3-red w3- shadow btn-sm ">تسجيل الخروج</a>
                     <br>
                     <br>
                     <a href="#" onclick="showPage('dashboard/profile')"  class="btn btn-sm w3-indigo">{{ __('profile') }}</a>
