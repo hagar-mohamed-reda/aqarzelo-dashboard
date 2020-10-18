@@ -17,11 +17,6 @@
 //********************************************
 // check if user login
 
-Route::group(["middleware" => "company"], function() {
-
-
-});
-
 
 Route::group(["middleware" => "admin"], function() {
 

@@ -37,7 +37,7 @@ class PostController extends Controller
                         ->editColumn('category_id', function(Post $post) {
                             return optional($post->category)->name_ar;
                         })
-                        ->editColumn('category_id', function(Post $post) {
+                        ->editColumn('status', function(Post $post) {
                             return __($post->status);
                         })
                         ->rawColumns(['action'])
@@ -66,14 +66,6 @@ class PostController extends Controller
         try {
             $data = $request->all();
             $post = Post::create($data);
-
-
-            // upload attachment
-            Helper::uploadFile($request->file("icon"), "/post", function($filename) use ($post){
-                $post->update([
-                    "icon" => $filename
-                ]);
-            });
 
             notify(__('add post'), __('add post') . " " . $post->name, 'fa fa-cubes');
 
@@ -119,13 +111,6 @@ class PostController extends Controller
             $data = $request->all();
             $post->update($data);
 
-
-            // upload attachment
-            Helper::uploadFile($request->file("icon"), "/post", function($filename) use ($post){
-                $post->update([
-                    "icon" => $filename
-                ]);
-            });
             notify(__('edit post'), __('edit post') . " " . $post->name, "fa fa-cubes");
             return Message::success(Message::$EDIT);
         } catch (\Exception $ex) {

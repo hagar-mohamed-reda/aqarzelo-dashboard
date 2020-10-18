@@ -132,7 +132,7 @@ class User  extends Authenticatable
 
             $token = [$this->firebase_token];
             return Helper::firebaseNotification($token, $data);
-        } catch (Exception $e) {}
+        } catch (\Exception $e) {}
     }
 
 

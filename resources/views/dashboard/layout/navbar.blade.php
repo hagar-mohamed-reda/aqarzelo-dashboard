@@ -7,9 +7,9 @@
         <div class="user-panel" style="background: url({{ url('/dist/img/patterns/user-panel-bg_green.jpg') }});background-size: cover;bakcground-repeat: no-repeat!important;height: 150px;padding-top: 50px;" >
             <div class="pull-left image">
                 @if (Auth::user()->photo)
-                <img src="{{ url('/') }}/image/users/{{ Auth::user()->photo }}" class="img-circle" alt="User Image">
+                <img src="{{ AQARZELO_PUBLIC_URL }}/image/users/{{ Auth::user()->photo }}" class="img-circle" alt="User Image">
                 @else
-                <img src="{{ url('/') }}/image/user.png" class="img-circle" alt="User Image">
+                <img src="{{ AQARZELO_PUBLIC_URL }}/image/user.png" class="img-circle" alt="User Image">
                 @endif
             </div>
             <div class="pull-left info w3-padding">
@@ -76,6 +76,14 @@
             </li>
             @endif
 
+            @if (Auth::user()->_can('country'))
+            <li class="treeview font w3-text-pink" onclick="showPage('admin/country')" >
+                <a href="#">
+                    <i class="fa fa-building-o"></i> <span>{{ __('countries') }}</span>
+                </a>
+            </li>
+            @endif
+
             @if (Auth::user()->_can('city'))
             <li class="treeview font w3-text-pink" onclick="showPage('admin/city')" >
                 <a href="#">
@@ -112,9 +120,22 @@
 
             @endif
 
+            @if (Auth::user()->type == 'user_company')
+            <li class="treeview font w3-text-pink" onclick="showPage('company/user')" >
+                <a href="#">
+                    <i class="fa fa-users"></i> <span>{{ __('users') }}</span>
+                </a>
+            </li>
+            <li class="treeview font w3-text-pink" onclick="showPage('company/post')" >
+                <a href="#">
+                    <i class="fa fa-picture-o"></i> <span>{{ __('posts') }}</span>
+                </a>
+            </li>
+            @endif
 
 
-            <li class="treeview font w3-text-brown" >
+
+            <li class="treeview font w3-text-brown hidden" >
                 <a href="#">
                     <i class="fa fa-bar-chart"></i> <span>{{ __('reports') }}</span>
                     <span class="pull-right-container">

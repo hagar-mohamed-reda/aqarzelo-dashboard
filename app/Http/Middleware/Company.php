@@ -7,7 +7,7 @@ use App\User;
 
 use Illuminate\Support\Facades\Auth;
 
-class Admin {
+class Company {
 
     /**
      * Handle an incoming request.
@@ -19,11 +19,11 @@ class Admin {
     public function handle($request, Closure $next) {
         $user = Auth::user();
 
-        if ($user && optional($user)->type == 'admin') {
+        if ($user && optional($user)->type == 'user_company') {
             return $next($request);
         }
 
-        return redirect("/admin/login");
+        return redirect("/company/login");
     }
 
 }

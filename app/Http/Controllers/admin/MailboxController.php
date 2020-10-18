@@ -28,9 +28,7 @@ class MailboxController extends Controller
      * return json data
      */
     public function getData() {
-        $query = MailBox::query()->where('user_id', Auth::user()->id)->latest();
-
-        return DataTables::eloquent($query)
+        return DataTables::eloquent(MailBox::query())
                         ->addColumn('action', function(MailBox $mailbox) {
                             return view("admin.mailbox.action", compact("mailbox"));
                         })
