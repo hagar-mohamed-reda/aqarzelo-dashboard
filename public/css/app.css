@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 5, 2019, 3:55:25 AM
+    Author     : Ali Farag
+*/
+
+body, html {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.margin-0 {
+    margin: 0!important;
+}
+
+.frame {
+    width: 100%;
+    height: 100%;
+    border: none; 
+}
+
+.transition {
+    transition: all 0.5s ease-in-out;
+}
+
+.light-gray {
+    background-color: #fafafa;
+}
+
+.detail {
+    display: none;
+}
+
+.shadow, .btn-float { 
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)!important;
+}
+
+
+.form-control:invalid {
+    border-color: #cc0000;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.btn-float {
+    width: 60px;
+    height: 60px;
+    color: white;
+    padding: 5px;
+    text-align: center!important;
+    z-index: 888888888;
+    border-radius: 20em;
+    transform: scale3d(1.1, 1.1, 2);
+}
+
+.btn-float:hover {
+    outline: none;
+    transform: scale3d(1, 1, 1);
+}
+
+.round {
+    border-radius: 7px;
+}
+
+
+
+
+
+
+

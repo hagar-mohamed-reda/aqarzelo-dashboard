@@ -1,0 +1,12 @@
+{
+    "name": "Ali Farag",
+    "fsdf": "fdsf'",
+    "patient": {
+        "id": "fds",
+        "dsfsd",
+    },
+    
+    "lab_order_details": [
+        {"id": 1, "analysis": "fsdf"}
+    ]
+}

@@ -1,0 +1,371 @@
+
+* {
+    text-transform: capitalize;
+}
+
+.form-control {
+    border-radius: 0px!important;
+}
+
+.light-gray {
+    background-color: #fafafa!important;
+}
+
+#map-container, #map {
+    width: 100%;
+    height: 100%;
+}
+
+#map-container {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: #fafafa;
+    z-index: 1;
+}
+
+.sidebar {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 400px;
+    z-index: 2;
+}
+
+.content {
+    min-height: 400px;
+    width: inherit;
+    display: none;
+}
+
+.search-container {
+    padding: 2px 15px!important;
+    width: inherit;
+    margin-bottom: 5px;
+}
+
+.dividor-of-search-icon {
+    border-right: 1px solid gray;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.owl-carousel img {
+    width: 100%!important;
+}
+
+.post-header-background {
+    background-image: url('../image/cover.jpg');
+}
+
+.w3-col {
+    padding: 7px;
+}
+
+
+/* image viewer */
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 20px;
+    display: block;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 3px;
+    border-radius: 3px 0 0 3px;
+}
+.prev {
+    left: 5px;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+/*
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+*/
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.slider-handle {
+    background-color: #06D9B2!important;
+    background-image: none!important;
+}
+
+.btn-number-spinner-left {
+    border-top-left-radius: 5em!important;
+    border-bottom-left-radius: 5em!important;
+}
+
+.btn-number-spinner-right {
+    border-top-right-radius: 5em!important;
+    border-bottom-right-radius: 5em!important;
+}
+
+#slider12c .slider-selection {
+    background: #06D9B2!important;
+}
+
+.slider {
+    width: 100%!important;
+}
+
+.slider-track {
+    height: 5px!important;
+}
+
+.slider-selection {
+    height: 5px!important;
+    background: #06D9B2!important;
+}
+
+.text-gray {
+    color: #bfbbbb!important;
+}
+
+
+.recommend-item {
+    transition: all 0.5s ease-in-out;
+    height: 200px!important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.recommended-post .owl-item {
+    background-color: transparent!important;
+}
+
+.recommend-background {
+    background-image: url('../image/recommend-background.png');
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+#recommendToggleBtn {
+    box-shadow: 0 0px 2px 0 rgba(0,0,0,0.14), 0 0px 1px -1px rgba(0,0,0,0.12), 0 -3px 5px 0 rgba(0,0,0,0.2)!important;
+}
+
+.recommend-item:hover {
+    background: #06D9B2!important;
+    color: white;
+    transform: scale3d(1.1, 1.1, 2);
+}
+
+.text-gray {
+    color: #ada1a1!important;
+}
+
+
+.step-post-button {
+    border-radius: 5em!important;
+    height: 60px!important;
+    width: 60px!important;
+    background-color: white;
+    border: 1px solid #02a2a7!important;
+}
+
+.step-post-button:hover {/*
+    background-color: #06D9B2!important;
+    color: white!important;
+    border-radius: 5em!important;*/
+}
+
+#masterDrop {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ui-state-default {
+    cursor: move!important;
+}
+
+/*
+    step form span
+*/
+/*headings*/
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+/*progressbar*/
+.progressbar {
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+    width: 60%;
+    margin: 0 auto 30px;
+}
+.progressbar li {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    background-color: transparent!important;
+    position: relative;
+}
+.progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 50px;
+    line-height: 50px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid #02a2a7;
+    margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+.progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: #02a2a7;
+    position: absolute;
+    left: -50%;
+    top: 42%;
+    z-index: -1; /*put it behind the numbers*/
+}
+.progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+.progressbar li.active:before,  .progressbar li.active:after{
+    background: rgb(6, 217, 178);
+    color: white;
+}
+.vtcha{
+    max-width: 100%;
+}
+.vtcha .item-box,.vtcha .target-box{
+    width: 170px;
+    margin: 10px auto 0;
+}
+
+/*
+    radio
+*/
+
+.radio {
+  margin: 0.5rem;
+}
+.radio input {
+  position: absolute;
+  opacity: 0;
+}
+.radio input + .radio-label:before {
+  content: '';
+  background: #f4f4f4;
+  border-radius: 100%;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  position: relative;
+  top: -0.2em;
+  margin-right: 1em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+.radio input:checked + .radio-label:before {
+  background-color: #3197EE;
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+.radio input:focus + .radio-label:before {
+  outline: none;
+  border-color: #3197EE;
+}
+.radio input:disabled + .radio-label:before {
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+  border-color: #b4b4b4;
+  background: #b4b4b4;
+}
+.radio input + .radio-label:empty:before {
+  margin-right: 0;
+}
+
+
+
+.post-data-step {
+    display: none;
+}
+
+.post-data-step-1 {
+    display: block;
+}
