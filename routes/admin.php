@@ -154,13 +154,7 @@ Route::get("admin/logout", "admin\LoginController@logout");
 Route::get("notify", "admin\NotificationController@get");
 
 Route::get("test", function(Illuminate\Http\Request $request){
-    $studentReseaches = [];
-    foreach(App\StudentResearch::all() as $item) {
-        $item->update([
-            "course_id" => $item->research->course->id
-        ]);
-    }
-
+    echo public_path();
 
 });
 

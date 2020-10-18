@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\helper\ViewBuilder;
-class City extends Model
+class Country extends Model
 {
     protected $fillable = [
-        'name_ar','name_en', 'country_id'
+        'name_ar','name_en', 'icon'
     ];
 
-    public function areas()
+    public function cities()
     {
-        return $this->hasMany('App\Area');
+        return $this->hasMany('App\City');
     }
 
     /**
@@ -23,17 +23,13 @@ class City extends Model
     public function getViewBuilder() {
         $builder = new ViewBuilder($this, "rtl");
 
-        $items = [];
-        foreach(Country::all() as $item)
-            $items[] = [$item->id, $item->name_ar];
-
-        $builder->setAddRoute(url('/admin/city/store'))
-                ->setEditRoute(url('/admin/city/update') . "/" . $this->id)
+        $builder->setAddRoute(url('/admin/country/store'))
+                ->setEditRoute(url('/admin/country/update') . "/" . $this->id)
                 ->setCol(["name" => "id", "label" => __('id'), "editable" => false ])
                 ->setCol(["name" => "name_ar", "label" => __('name_ar'), "col" => "col-lg-12 col-md-12 col-sm-12"])
                 ->setCol(["name" => "name_en", "label" => __('name_en'), "col" => "col-lg-12 col-md-12 col-sm-12"])
-                ->setCol(["name" => "city_id", "label" => __('city'), "type" => "select", "data" => $items, "col" => "col-lg-12 col-md-12 col-sm-12"])
-                ->setUrl(url('/image/city'))
+                ->setCol(["name" => "icon", "label" => __('icon'), "type" => "image", "col" => "col-lg-12 col-md-12 col-sm-12"])
+                ->setUrl(url('/image/country'))
                 ->build();
 
         return $builder;
