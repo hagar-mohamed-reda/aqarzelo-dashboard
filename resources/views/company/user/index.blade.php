@@ -77,7 +77,7 @@ $(document).ready(function() {
      $('#table').DataTable({
         "processing": true,
         "serverSide": true,
-        "ajax": "{{ url('/admin/user/data') }}",
+        "ajax": "{{ url('/company/user/data') }}",
         "columns":[
             @foreach($builder->cols as $col)
             @if ($col['name'] != "password")
