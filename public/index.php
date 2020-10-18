@@ -9,7 +9,7 @@
 
 define('LARAVEL_START', microtime(true));
 
-define("AQARZELO_PUBLIC_PATH", "/home3/sphinxa1/public_html/aqarzelo-backend/public");
+define("AQARZELO_PUBLIC_PATH", "/home3/sphinxa1/public_html/aqarzelo/public");
 define("AQARZELO_PUBLIC_URL", "http://aqarzelo.com");
 
 /*

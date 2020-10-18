@@ -99,7 +99,7 @@ class Helper {
     }
 
     public static function uploadImg($file, $folder = '/', $action) {
-        $path = "/home3/sphinxa1/public_html/aqarzelo/public/images";
+        $path = AQARZELO_PUBLIC_PATH . "/images";
         $filename = "";
         if ($file) {
 
@@ -114,7 +114,7 @@ class Helper {
     }
 
     public static function uploadFile($file, $folder = '/', $action) {
-        $path = "/home3/sphinxa1/public_html/aqarzelo/public/images";
+        $path = AQARZELO_PUBLIC_PATH . "/file";
         $filename = "";
         if ($file) {
             $extension = $file->getClientOriginalExtension();
