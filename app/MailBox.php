@@ -8,6 +8,8 @@ use App\helper\ViewBuilder;
 
 class MailBox extends Model
 {
+    protected $table = "mail_boxes";
+
     protected $fillable = [
         'email', 'name','message' ,'user_type','user_id'
     ];
