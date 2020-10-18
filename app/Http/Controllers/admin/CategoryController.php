@@ -127,7 +127,7 @@ class CategoryController extends Controller
             });
             notify(__('edit category'), __('edit category') . " " . $category->name, "fa fa-cubes");
             return Message::success(Message::$EDIT);
-        } catch (\Exception $ex) {
+        } catch (Exception $ex) {
             return Message::error(Message::$ERROR);
         }
     }
