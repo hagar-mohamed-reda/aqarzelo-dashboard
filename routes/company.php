@@ -35,21 +35,6 @@ Route::group(["middleware" => "company"], function() {
     Route::post("company/user/update/{user}", "company\UserController@update");
 
 
-    // post routes
-    Route::get("admin/post", "admin\PostController@index");
-    Route::get("admin/post/create", "admin\PostController@create");
-    Route::post("admin/post/store", "admin\PostController@store");
-    Route::get("admin/post/data", "admin\PostController@getData");
-    Route::get("admin/post/edit/{post}", "admin\PostController@edit");
-    Route::get("admin/post/remove/{post}", "admin\PostController@destroy");
-    Route::post("admin/post/update/{post}", "admin\PostController@update");
-
-    // profile routes
-    Route::get("admin/profile", "admin\ProfileController@index");
-    Route::post("admin/profile/update", "admin\ProfileController@update");
-    Route::post("admin/profile/update-password", "admin\ProfileController@updatePassword");
-    Route::post("admin/profile/update-phone", "admin\ProfileController@updatePhone");
-
 });
 
 

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use Illuminate\Support\Facades\Auth as authn;
 use Closure;
 
 class Auth
@@ -15,9 +15,12 @@ class Auth
      */
     public function handle($request, Closure $next)
     {
-        if (session("user") == null)
-            return redirect("dashboard/login");
-        
-        return $next($request);
+        $user = authn::user();
+
+        if ($user) {
+            return $next($request);
+        }
+
+        return redirect("/admin/login");
     }
 }

@@ -17,6 +17,24 @@
 //********************************************
 // check if user login
 
+Route::group(["middleware" => "auth"], function() {
+
+    // post routes
+    Route::get("admin/post", "admin\PostController@index");
+    Route::get("admin/post/create", "admin\PostController@create");
+    Route::post("admin/post/store", "admin\PostController@store");
+    Route::get("admin/post/data", "admin\PostController@getData");
+    Route::get("admin/post/edit/{post}", "admin\PostController@edit");
+    Route::get("admin/post/remove/{post}", "admin\PostController@destroy");
+    Route::post("admin/post/update/{post}", "admin\PostController@update");
+
+
+    // profile routes
+    Route::get("admin/profile", "admin\ProfileController@index");
+    Route::post("admin/profile/update", "admin\ProfileController@update");
+    Route::post("admin/profile/update-password", "admin\ProfileController@updatePassword");
+    Route::post("admin/profile/update-phone", "admin\ProfileController@updatePhone");
+});
 
 Route::group(["middleware" => "admin"], function() {
 
@@ -96,14 +114,6 @@ Route::group(["middleware" => "admin"], function() {
     Route::get("admin/mailbox/remove/{mailbox}", "admin\MailboxController@destroy");
     Route::post("admin/mailbox/update/{mailbox}", "admin\MailboxController@update");
 
-    // post routes
-    Route::get("admin/post", "admin\PostController@index");
-    Route::get("admin/post/create", "admin\PostController@create");
-    Route::post("admin/post/store", "admin\PostController@store");
-    Route::get("admin/post/data", "admin\PostController@getData");
-    Route::get("admin/post/edit/{post}", "admin\PostController@edit");
-    Route::get("admin/post/remove/{post}", "admin\PostController@destroy");
-    Route::post("admin/post/update/{post}", "admin\PostController@update");
 
     // notification routes
     Route::get("admin/notification", "admin\NotificationController@index");
@@ -120,12 +130,6 @@ Route::group(["middleware" => "admin"], function() {
     Route::post("admin/role/permission/update/{role}", "admin\RoleController@updatePermissions");
     Route::get("admin/role/remove/{role}", "admin\RoleController@destroy");
     Route::post("admin/role/update/{role}", "admin\RoleController@update");
-
-    // profile routes
-    Route::get("admin/profile", "admin\ProfileController@index");
-    Route::post("admin/profile/update", "admin\ProfileController@update");
-    Route::post("admin/profile/update-password", "admin\ProfileController@updatePassword");
-    Route::post("admin/profile/update-phone", "admin\ProfileController@updatePhone");
 
     // option routes
     Route::get("admin/option/", "admin\SettingController@index");
