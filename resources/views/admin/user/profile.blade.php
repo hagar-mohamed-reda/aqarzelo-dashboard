@@ -247,8 +247,8 @@ $(document).ready(function() {
 
      });
 
-     $(".password-view").each(function(){
-        createViewPasswordBtn(this);
+    $(".password-view").each(function(){
+        createViewPasswordBtn(this), function(container){ container.top = "25px"; };
     });
 });
 </script>

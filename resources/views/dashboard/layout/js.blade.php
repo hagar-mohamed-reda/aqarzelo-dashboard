@@ -51,16 +51,22 @@
 <script src="{{ url('/') }}/js/owl.carousel.min.js"></script>
 <script>
 
-function createViewPasswordBtn(input) {
+function createViewPasswordBtn(input, action=null) {
     var container = document.createElement('div');
+    if (action)
+        action(container);
     $(input).parent().addClass('w3-display-container');
 
     container.innerHTML = "<i class='fa fa-eye w3-text-indigo w3-large' ><i>";
     $(container).click(function(){
-        if (input.type == 'password')
+        if (input.type == 'password') {
             input.type = 'text';
-        else
+            container.innerHTML = "<i class='fa fa-eye-slash w3-text-indigo w3-large' ><i>";
+        }
+        else{
             input.type = 'password';
+            container.innerHTML = "<i class='fa fa-eye w3-text-indigo w3-large' ><i>";
+        }
     });
 
     $(container).addClass("w3-display-topright w3-padding btn");
