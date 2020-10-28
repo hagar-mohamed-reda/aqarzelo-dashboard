@@ -75,7 +75,7 @@
                         </div>
                         <div class="user-company login-container" style="display: none" >
                             <div class="w3-center">
-                                <b>{{ "login as company" }}</b>
+                                <b>{{ "login as user of company" }}</b>
                                 <br>
                             </div>
                             <form action="{{ url('/') }}/company/login" class="auth-card company-login-card" method="post">

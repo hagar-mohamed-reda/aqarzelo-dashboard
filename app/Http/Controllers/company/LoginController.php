@@ -60,6 +60,7 @@ class LoginController extends Controller {
                     ->first();
             }
 
+            return $user;
             if ($user) {
                 if (!Hash::check($request->password, $user->password)) {
                     return redirect($redirect . "?status=0&msg=$error");
