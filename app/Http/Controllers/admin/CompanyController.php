@@ -73,7 +73,7 @@ class CompanyController extends Controller {
 
             $data = $request->all();
             if ($request->password)
-                $data['password'] = Hash::make($request->password);
+                $data['password'] = bcrypt($request->password);
             $company = Company::create($data);
 
             // upload attachment
@@ -107,8 +107,8 @@ class CompanyController extends Controller {
 
             $data = $request->all();
             unset($data['photo']);
-            if ($request->password)
-                $data['password'] = Hash::make($request->password);
+            if ($request->password != $company->password)
+                $data['password'] = bcrypt($request->password);
 
             $data['company_id'] = Auth::user()->id;
 

@@ -32,15 +32,17 @@
                 <!-- /.login-logo -->
                 <div class="login-box-body w3-card">
                     <p class="login-box-msg" style="color: #02A2A7!important">{{ __('login to your dashboard control') }}</p>
-                    <div class="btn-group" role="group" aria-label="..." style="margin: auto" >
-                        <button type="button"
-                        onclick="$('.login-container').slideUp(500);$('.user-company').slideDown(500)"
-                        class="btn btn-default">{{ __('user_company') }}</button>
-                        <button type="button"
-                        onclick="$('.login-container').slideUp(500);$('.company').slideDown(500)"
-                        class="btn btn-default">{{ __('company') }}</button>
-                      </div>
-                    <br>
+                    <center>
+                        <div class="btn-group" role="group" aria-label="..." style="margin: auto" >
+                            <button type="button"
+                            onclick="$('.login-container').slideUp(500);$('.user-company').slideDown(500)"
+                            class="btn btn-default">{{ __('user_company') }}</button>
+                            <button type="button"
+                            onclick="$('.login-container').slideUp(500);$('.company').slideDown(500)"
+                            class="btn btn-default">{{ __('company') }}</button>
+                          </div>
+                        <br>
+                    </center>
                     <br>
 
                     <div class="auth-container company-container"  >
