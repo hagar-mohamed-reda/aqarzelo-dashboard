@@ -174,17 +174,17 @@
                     {{ csrf_field() }}
                     <div class="form-group has-feedback">
                         <label>{{ __('old password') }}</label>
-                        <input required="" type="password" name="old_password" autocomplete="off" value=""  class="form-control" placeholder="{{ __('password') }}">
+                        <input required="" type="password" name="old_password" autocomplete="off" value=""  class="form-control password-view"  placeholder="{{ __('password') }}">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
                         <label>{{ __('new password') }}</label>
-                        <input required="" type="password" name="new_password"  value="" autocomplete="off" class="form-control" placeholder="{{ __('confirm password') }}">
+                        <input required="" type="password" name="new_password"  value="" autocomplete="off" class="form-control password-view" placeholder="{{ __('confirm password') }}">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
                         <label>{{ __('confirm password') }}</label>
-                        <input required="" type="password" name="confirm_password"  value="" autocomplete="off" class="form-control" placeholder="{{ __('confirm password') }}">
+                        <input required="" type="password" name="confirm_password"  value="" autocomplete="off" class="form-control password-view" placeholder="{{ __('confirm password') }}">
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <br>
@@ -247,6 +247,8 @@ $(document).ready(function() {
 
      });
 
-
+     $(".password-view").each(function(){
+        createViewPasswordBtn(this);
+    });
 });
 </script>
