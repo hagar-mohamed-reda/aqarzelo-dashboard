@@ -248,7 +248,7 @@ $(document).ready(function() {
      });
 
     $(".password-view").each(function(){
-        createViewPasswordBtn(this), function(container){ container.top = "25px"; };
+        createViewPasswordBtn(this, function(container){ container.top = "25px"; });
     });
 });
 </script>
