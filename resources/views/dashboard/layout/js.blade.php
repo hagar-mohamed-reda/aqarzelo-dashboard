@@ -55,6 +55,7 @@ function createViewPasswordBtn(input, action=null) {
     var container = document.createElement('div');
     if (action)
         action(container);
+
     $(input).parent().addClass('w3-display-container');
 
     container.innerHTML = "<i class='fa fa-eye w3-text-indigo w3-large' ><i>";
@@ -71,6 +72,7 @@ function createViewPasswordBtn(input, action=null) {
 
     $(container).addClass("w3-display-topright w3-padding btn");
     $(container).css('right', "20px");
+    $(container).css('top', "25px");
     $(input).parent().append(container);
 }
 </script>
