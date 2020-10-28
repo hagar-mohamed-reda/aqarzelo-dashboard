@@ -48,7 +48,7 @@ class Category extends Model
                 ->setCol(["name" => "id", "label" => __('id'), "editable" => false ])
                 ->setCol(["name" => "name_ar", "label" => __('name_ar')])
                 ->setCol(["name" => "name_en", "label" => __('name_en')])
-                ->setCol(["name" => "icon", "label" => __('icon'), "type" => "image"])
+                //->setCol(["name" => "icon", "label" => __('icon'), "type" => "image"])
                 ->setUrl(AQARZELO_PUBLIC_URL . '/images/category')
                 ->build();
 
