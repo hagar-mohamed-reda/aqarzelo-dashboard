@@ -21,6 +21,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        return Auth::guard('company')->user();
         return view("index");
     }
 
