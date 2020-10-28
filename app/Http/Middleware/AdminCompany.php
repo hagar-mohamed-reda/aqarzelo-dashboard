@@ -19,7 +19,7 @@ class AdminCompany {
     public function handle($request, Closure $next) {
         $user = Auth::user();
 
-        if ($user && optional($user)->is_company == true) {
+        if ($user && session('type') == 'company') {
             return $next($request);
         }
 
