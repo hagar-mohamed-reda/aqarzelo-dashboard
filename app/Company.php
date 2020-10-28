@@ -40,9 +40,12 @@ class Company extends Authenticatable implements Profilable {
      * @var array
      */
     protected $appends = [
-        'photo_url', 'cover_url'
+        'photo_url', 'cover_url', 'is_company'
     ];
 
+    public function getIsCompanyAttribute() {
+        return true;
+    }
 
     /**
      * return url of the image of the user
