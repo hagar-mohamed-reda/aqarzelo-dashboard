@@ -5,6 +5,8 @@
     @endif
 
     @if (Auth::user()->_can('remove category'))
+    <!--
     <i class="fa fa-trash w3-text-red w3-button" onclick="remove('', '{{ url('/admin/category/remove/') .'/' . $category->id }}')" ></i>
+    -->
     @endif
 </div>
