@@ -32,20 +32,24 @@
                 <!-- /.login-logo -->
                 <div class="login-box-body w3-card">
                     <p class="login-box-msg" style="color: #02A2A7!important">{{ __('login to your dashboard control') }}</p>
-                    <div class="btn-group" role="group" aria-label="...">
+                    <center class="btn-group" role="group" aria-label="...">
                         <button type="button"
                         onclick="$('.login-container').slideUp(500);$('.user-company').slideDown(500)"
                         class="btn btn-default">{{ __('user_company') }}</button>
                         <button type="button"
                         onclick="$('.login-container').slideUp(500);$('.company').slideDown(500)"
                         class="btn btn-default">{{ __('company') }}</button>
-                      </div>
+                      </center>
+                    <br>
                     <br>
 
                     <div class="auth-container company-container"  >
 
 
                         <div class="company login-container">
+                            <div class="w3-center">
+                                <b>{{ "login as company" }}</b>
+                            </div>
                             <form action="{{ url('/') }}/company/login" class="auth-card company-login-card" method="post">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="type" value="company" >
@@ -69,6 +73,9 @@
                             </form>
                         </div>
                         <div class="user-company login-container" style="display: none" >
+                            <div class="w3-center">
+                                <b>{{ "login as user of company" }}</b>
+                            </div>
                             <form action="{{ url('/') }}/company/login" class="auth-card company-login-card" method="post">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="type" value="user_company" >
