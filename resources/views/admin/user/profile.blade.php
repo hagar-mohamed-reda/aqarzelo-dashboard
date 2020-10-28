@@ -7,7 +7,7 @@
         {{ __('profile') }}
     </h1>
     <ol class="breadcrumb font">
-        <li><a href="#" onclick="showPage('dashboard/main')" ><i class="fa fa-dashboard"></i> لوحة التحكم</a></li>
+        <li><a href="#" onclick="showPage('admin/profile')" ><i class="fa fa-admin"></i> لوحة التحكم</a></li>
         <li class="active">{{ __('profile') }}</li>
     </ol>
 </section>
@@ -138,7 +138,7 @@
 
               <div class="tab-pane" id="timeline">
                 <!-- The timeline -->
-                 <form action="{{ url('/') }}/dashboard/profile/update" autocomplete="off" class="form" method="post"  >
+                 <form action="{{ url('/') }}/admin/profile/update" autocomplete="off" class="form" method="post"  >
                     {{ csrf_field() }}
                     <div class="form-group has-feedback">
                         <label>{{ __('name') }}</label>
@@ -173,7 +173,7 @@
 
               <div class="tab-pane" id="password">
                 <!-- The timeline -->
-                 <form action="{{ url('/') }}/dashboard/profile/update-password" autocomplete="off" class="form" method="post"  >
+                 <form action="{{ url('/') }}/admin/profile/update-password" autocomplete="off" class="form" method="post"  >
                     {{ csrf_field() }}
                     <div class="form-group has-feedback">
                         <label>{{ __('old password') }}</label>
@@ -203,7 +203,7 @@
 
               <div class="tab-pane" id="phone">
                 <!-- The timeline -->
-                 <form action="{{ url('/') }}/dashboard/profile/update-phone" autocomplete="off" class="form" method="post"  >
+                 <form action="{{ url('/') }}/admin/profile/update-phone" autocomplete="off" class="form" method="post"  >
                     {{ csrf_field() }}
                     <div class="form-group has-feedback">
                         <label>{{ __('new phone') }}</label>
@@ -240,7 +240,7 @@
 <script>
     formAjax(false, function(r){
         $('.confirm_account_modal').modal('hide');
-        showPage('dashboard/profile');
+        showPage('admin/profile');
 
     });
 

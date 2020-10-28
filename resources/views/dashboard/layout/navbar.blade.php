@@ -7,13 +7,13 @@
         <div class="user-panel" style="background: url({{ url('/dist/img/patterns/user-panel-bg_green.jpg') }});background-size: cover;bakcground-repeat: no-repeat!important;height: 150px;padding-top: 50px;" >
             <div class="pull-left image">
                 @if (Auth::user()->photo)
-                <img src="{{ AQARZELO_PUBLIC_URL }}/image/users/{{ Auth::user()->photo }}" class="img-circle" alt="User Image">
+                <img src="{{ AQARZELO_PUBLIC_URL }}/image/users/{{ Auth::user()->photo_url }}" class="img-circle" alt="User Image">
                 @else
                 <img src="{{ AQARZELO_PUBLIC_URL }}/image/user.png" class="img-circle" alt="User Image">
                 @endif
             </div>
             <div class="pull-left info w3-padding">
-                <a href="#"  onclick="showPage('dashboard/profile')" class="w3-text-white w3-large"  ><b>{{ Auth::user()->name }}</b></a>
+                <a href="#"  onclick="showPage('admin/profile')" class="w3-text-white w3-large"  ><b>{{ Auth::user()->name }}</b></a>
             </div>
         </div>
 

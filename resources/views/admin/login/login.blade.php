@@ -27,7 +27,7 @@
                 <div class="login-logo">
                     <img src="https://aqarzelo.com/backend/logopng.ico" class="w3-center w3-round animate__animated animate__bounce animate__slow animate__infinite	infinite"  width="90px" >
                     <br>
-                    <a href="#"   style="color: #02A2A7!important" ><b class="  animate__animated animate__pulse animate__slow animate__infinite	infinite" > AQAR ZELO  </b></a>
+                    <a href="#"   style="color: #02A2A7!important" ><b class="  animate__animated animate__pulse animate__slow animate__infinite	infinite" > AQARZELO  </b></a>
                 </div>
                 <!-- /.login-logo -->
                 <div class="login-box-body w3-card">
