@@ -70,6 +70,8 @@ class LoginController extends Controller {
                     return redirect($redirect . "?status=0&msg=" . __('your account is not confirmed'));
                 Auth::login($user);
                 session(["type" => $request->type]);
+
+                return Auth::user();
                 return redirect('company');
             }
         } catch (Exception $ex) {}
