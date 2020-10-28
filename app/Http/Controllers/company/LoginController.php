@@ -71,7 +71,7 @@ class LoginController extends Controller {
                 Auth::login($user);
                 session(["type" => $request->type]);
 
-                return Auth::user();
+                //return Auth::user();
                 return redirect('company');
             }
         } catch (Exception $ex) {}

@@ -19,7 +19,7 @@ class Company {
     public function handle($request, Closure $next) {
         $user = Auth::user();
 
-        if ($user && optional($user)->type == 'user_company' || optional($user)->is_company) {
+        if ($user && (optional($user)->type == 'user_company' || optional($user)->is_company)) {
             return $next($request);
         }
 
