@@ -27,38 +27,70 @@
                 <div class="login-logo">
                     <img src="https://aqarzelo.com/backend/logopng.ico" class="w3-center w3-round animate__animated animate__bounce animate__slow animate__infinite	infinite"  width="90px" >
                     <br>
-                    <a href="#"  class="" style="color: #02A2A7!important"  ><b class="  animate__animated animate__pulse animate__slow animate__infinite	infinite" > AQAR ZELO  </b></a>
+                    <a href="#"  class="" style="color: #02A2A7!important"  ><b class="  animate__animated animate__pulse animate__slow animate__infinite	infinite" > AQARZELO  </b></a>
                 </div>
                 <!-- /.login-logo -->
                 <div class="login-box-body w3-card">
                     <p class="login-box-msg" style="color: #02A2A7!important">{{ __('login to your dashboard control') }}</p>
-
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button"
+                        onclick="$('.login-container').slideUp(500);$('.user-company').slideDown(500)"
+                        class="btn btn-default">{{ __('user_company') }}</button>
+                        <button type="button"
+                        onclick="$('.login-container').slideUp(500);$('.company').slideDown(500)"
+                        class="btn btn-default">{{ __('company') }}</button>
+                      </div>
                     <br>
 
                     <div class="auth-container company-container"  >
-                        <div>
-                        </div>
-                        <form action="{{ url('/') }}/company/login" class="auth-card company-login-card" method="post">
-                            {{ csrf_field() }}
-                            <input type="hidden" name="type" value="company" >
-                            <div class="form-group has-feedback">
-                                <input required="" type="text" name="phone" class="form-control" placeholder="{{ __('phone') }}">
-                                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
-                            </div>
-                            <div class="form-group has-feedback">
-                                <input required="" type="password" name="password" class="form-control" placeholder="{{ __('password') }}">
-                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                            </div>
-                            <br>
-                            <div class="">
-                                <!-- /.col -->
-                                <div class="form-group">
-                                    <button type="submit" style="background: #02A2A7!important" class="btn btn-primary btn-block btn-flat">{{ __('login') }}</button>
 
+
+                        <div class="company login-container">
+                            <form action="{{ url('/') }}/company/login" class="auth-card company-login-card" method="post">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="type" value="company" >
+                                <div class="form-group has-feedback">
+                                    <input required="" type="text" name="phone" class="form-control" placeholder="{{ __('phone') }}">
+                                    <span class="glyphicon glyphicon-phone form-control-feedback"></span>
                                 </div>
-                                <!-- /.col -->
-                            </div>
-                        </form>
+                                <div class="form-group has-feedback">
+                                    <input required="" type="password" name="password" class="form-control" placeholder="{{ __('password') }}">
+                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                </div>
+                                <br>
+                                <div class="">
+                                    <!-- /.col -->
+                                    <div class="form-group">
+                                        <button type="submit" style="background: #02A2A7!important" class="btn btn-primary btn-block btn-flat">{{ __('login') }}</button>
+
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                            </form>
+                        </div>
+                        <div class="user-company login-container" style="display: none" >
+                            <form action="{{ url('/') }}/company/login" class="auth-card company-login-card" method="post">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="type" value="user_company" >
+                                <div class="form-group has-feedback">
+                                    <input required="" type="text" name="phone" class="form-control" placeholder="{{ __('phone') }}">
+                                    <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <input required="" type="password" name="password" class="form-control" placeholder="{{ __('password') }}">
+                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                </div>
+                                <br>
+                                <div class="">
+                                    <!-- /.col -->
+                                    <div class="form-group">
+                                        <button type="submit" style="background: #02A2A7!important" class="btn btn-primary btn-block btn-flat">{{ __('login') }}</button>
+
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                            </form>
+                        </div>
 
                         <br>
                     </div>

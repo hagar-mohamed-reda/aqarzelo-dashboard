@@ -10,6 +10,7 @@ use App\User;
 use App\helper\Message;
 use App\helper\Helper;
 use App\LoginHistory;
+use App\Company;
 
 class LoginController extends Controller {
 
@@ -30,9 +31,11 @@ class LoginController extends Controller {
         $validator = validator()->make($request->all(), [
             'phone' => 'required',
             'password' => 'required',
+            'type' => 'required',
         ], [
             "phone.required" => __("phone_required"),
             "password.required" => __("password_required"),
+            "type.required" => __("type_required"),
         ]);
 
         if ($validator->fails()) {
@@ -43,11 +46,19 @@ class LoginController extends Controller {
 
 
         try {
-            $user = User::query()
-            ->where("phone", $request->phone)
-            ->orWhere('email', $request->phone)
-            //->where("password", $request->password)
-            ->first();
+            if ($request->type == 'company') {
+                $user = Company::query()
+                    ->where("phone", $request->phone)
+                    ->orWhere('email', $request->phone)
+                    //->where("password", $request->password)
+                    ->first();
+            } else {
+                $user = User::query()
+                    ->where("phone", $request->phone)
+                    ->orWhere('email', $request->phone)
+                    //->where("password", $request->password)
+                    ->first();
+            }
 
             if ($user) {
                 if (!Hash::check($request->password, $user->password)) {
@@ -58,6 +69,7 @@ class LoginController extends Controller {
                 if ($user->active == 'not_active')
                     return redirect($redirect . "?status=0&msg=" . __('your account is not confirmed'));
                 Auth::login($user);
+                session(["type" => $request->type]);
                 return redirect('company');
             }
         } catch (Exception $ex) {}
