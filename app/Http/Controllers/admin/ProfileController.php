@@ -113,7 +113,7 @@ class ProfileController extends Controller {
 
             $user = Auth::user();
 
-            if (Hash::check($request->old_password, $user->password))
+            if (!Hash::check($request->old_password, $user->password))
                 return Message::error(__('your old password is not correct'));
 
 
