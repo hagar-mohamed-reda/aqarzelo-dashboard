@@ -74,7 +74,7 @@ class LoginController extends Controller {
                 //return Auth::user();
                 if ($request->type == 'company') {
 
-                    return session('type');
+                    //return session('type');
                     return redirect('company-admin');
                 }
                 else
