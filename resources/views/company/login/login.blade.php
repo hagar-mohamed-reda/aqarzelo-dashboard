@@ -32,14 +32,14 @@
                 <!-- /.login-logo -->
                 <div class="login-box-body w3-card">
                     <p class="login-box-msg" style="color: #02A2A7!important">{{ __('login to your dashboard control') }}</p>
-                    <center class="btn-group" role="group" aria-label="...">
+                    <div class="btn-group" role="group" aria-label="..." style="margin: auto" >
                         <button type="button"
                         onclick="$('.login-container').slideUp(500);$('.user-company').slideDown(500)"
                         class="btn btn-default">{{ __('user_company') }}</button>
                         <button type="button"
                         onclick="$('.login-container').slideUp(500);$('.company').slideDown(500)"
                         class="btn btn-default">{{ __('company') }}</button>
-                      </center>
+                      </div>
                     <br>
                     <br>
 
@@ -49,6 +49,7 @@
                         <div class="company login-container">
                             <div class="w3-center">
                                 <b>{{ "login as company" }}</b>
+                                <br>
                             </div>
                             <form action="{{ url('/') }}/company/login" class="auth-card company-login-card" method="post">
                                 {{ csrf_field() }}
@@ -74,7 +75,8 @@
                         </div>
                         <div class="user-company login-container" style="display: none" >
                             <div class="w3-center">
-                                <b>{{ "login as user of company" }}</b>
+                                <b>{{ "login as company" }}</b>
+                                <br>
                             </div>
                             <form action="{{ url('/') }}/company/login" class="auth-card company-login-card" method="post">
                                 {{ csrf_field() }}
