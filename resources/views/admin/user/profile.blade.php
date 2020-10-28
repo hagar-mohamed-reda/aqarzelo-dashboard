@@ -237,7 +237,7 @@
 <script>
     formAjax(false, function(r){
         if (r.status == 1) {
-            showPage('admin/profile');
+            window.location.reload();
         }
     });
 
