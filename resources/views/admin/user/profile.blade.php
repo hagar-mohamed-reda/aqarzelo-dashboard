@@ -145,18 +145,13 @@
                         <input required="" type="text" name="name" class="form-control" value="{{ Auth::user()->name }}" placeholder="{{ __('name') }}">
                         <span class="fa fa-user form-control-feedback"></span>
                     </div>
-                    @if (Auth::user()->type == 'student')
                     <div class="form-group has-feedback">
-                        <label>{{ __('code') }}</label>
-                        <input required="" type="text" name="code" class="form-control" value="{{ Auth::user()->code }}" placeholder="{{ __('code') }}">
-                        <span class="fa fa-barcode form-control-feedback"></span>
+                        <label>{{ __('photo') }}</label>
+                        <input  type="file" name="photo" class="form-control" placeholder="{{ __('photo') }}">
+                        <span class="fa fa-user form-control-feedback"></span>
+                        <br>
+                        <img src="{{ Auth::user()->photo_url }}" width="30px" alt="">
                     </div>
-                    <div class="form-group has-feedback">
-                        <label>{{ __('level') }}</label>
-                        <input required="" type="text" name="level" class="form-control" value="{{ Auth::user()->level }}" placeholder="{{ __('level') }}">
-                        <span class="fa fa-graduation-cap form-control-feedback"></span>
-                    </div>
-                    @endif
 
                     <br>
                     <div class="">
@@ -239,9 +234,9 @@
 
 <script>
     formAjax(false, function(r){
-        $('.confirm_account_modal').modal('hide');
-        showPage('admin/profile');
-
+        if (r.status == 1) {
+            showPage('admin/profile');
+        }
     });
 
 $(document).ready(function() {

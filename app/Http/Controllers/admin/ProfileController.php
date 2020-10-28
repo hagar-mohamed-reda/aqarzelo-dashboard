@@ -34,6 +34,13 @@ class ProfileController extends Controller {
             $user = Auth::user();
             $user->update($request->all());
 
+            // upload attachment
+            Helper::uploadFile($request->file("photo"), "/users", function($filename) use ($user){
+                Helper::removeFile(AQARZELO_PUBLIC_PATH . "/images/users/" . $user->photo);
+                $user->update([
+                    "photo" => $filename
+                ]);
+            });
             notify(__('update profile info'), __('you update profile info'), "fa fa-id-card-o");
             return Message::success(Message::$DONE);
         } catch (\Exception $ex) {
