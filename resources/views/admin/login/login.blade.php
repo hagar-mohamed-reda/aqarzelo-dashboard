@@ -42,7 +42,7 @@
                             {{ csrf_field() }}
                             <input type="hidden" name="type" value="admin" >
                             <div class="form-group has-feedback">
-                                <input required="" type="text" name="phone" class="form-control" placeholder="{{ __('phone') }}">
+                                <input required="" type="text" name="phone" class="form-control" placeholder="{{ __('phone or email') }}">
                                 <span class="glyphicon glyphicon-phone form-control-feedback"></span>
                             </div>
                             <div class="form-group has-feedback">

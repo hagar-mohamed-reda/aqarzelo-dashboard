@@ -147,10 +147,12 @@
                     </div>
                     <div class="form-group has-feedback">
                         <label>{{ __('photo') }}</label>
-                        <input  type="file" name="photo" class="form-control" placeholder="{{ __('photo') }}">
+                        <input  type="file" name="photo"
+                        onchange="load(this, event)"
+                        class="form-control" placeholder="{{ __('photo') }}">
                         <span class="fa fa-user form-control-feedback"></span>
                         <br>
-                        <img src="{{ Auth::user()->photo_url }}" width="30px" alt="">
+                        <img src="{{ Auth::user()->photo_url }}" class="imageView" width="30px" alt="">
                     </div>
 
                     <br>
