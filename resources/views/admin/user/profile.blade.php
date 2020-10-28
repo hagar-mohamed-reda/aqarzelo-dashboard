@@ -148,7 +148,7 @@
                     <div class="form-group has-feedback">
                         <label>{{ __('photo') }}</label>
                         <input  type="file" name="photo"
-                        onchange="load(this, event)"
+                        onchange="loadImage(this, event)"
                         class="form-control" placeholder="{{ __('photo') }}">
                         <span class="fa fa-user form-control-feedback"></span>
                         <br>
