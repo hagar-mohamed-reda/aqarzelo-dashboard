@@ -32,8 +32,8 @@ class PostController extends Controller
         $query = Post::query();
 
         if (Auth::user()->type == 'user_company') {
-            $userIds = User::where('company_id', Auth::user()->company_id)->pluck('id')->toArray();
-            $query->whereIn('user_id', $userIds);
+            //$userIds = User::where('company_id', Auth::user()->company_id)->pluck('id')->toArray();
+            $query->whereIn('user_id', Auth::user()->user_id);
         }
 
         return DataTables::eloquent($query)

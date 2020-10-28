@@ -26,6 +26,16 @@ Route::group(["middleware" => "company"], function() {
     Route::get("company/", "company\DashboardController@index");
     Route::get("company/main", "company\DashboardController@main");
 
+
+
+});
+
+Route::group(["middleware" => "admin_company"], function() {
+
+    // company routes
+    Route::get("company-admin/", "company\DashboardController@index");
+    Route::get("company-admin/main", "company\DashboardController@main");
+
     // user routes
     Route::get("company/user", "company\UserController@index");
     Route::post("company/user/store", "company\UserController@store");
@@ -36,7 +46,6 @@ Route::group(["middleware" => "company"], function() {
 
 
 });
-
 
 
 // auth route
